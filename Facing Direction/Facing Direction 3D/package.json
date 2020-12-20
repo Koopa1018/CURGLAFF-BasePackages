@@ -15,8 +15,8 @@
     "com.clouds.facing_base": "0.0.1"
   },
   "repository": {
-    "revision": "3",
-    "type": "svn",
-    "url": "svn://curglaff.dynu.net/Packages/com.clouds.facing_3d/trunk"
+    "revision": "833814293b16239068e3d7dfb87fd3353040c9d3",
+    "type": "git",
+    "url": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Facing Direction/Facing Direction 3D"
   }
 }

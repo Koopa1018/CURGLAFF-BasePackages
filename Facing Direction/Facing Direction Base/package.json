@@ -13,8 +13,8 @@
     "com.unity.burst": "1.1.0"
   },
   "repository": {
-    "revision": "7",
-    "type": "svn",
-    "url": "svn://curglaff.dynu.net/Packages/com.clouds.facing_base/trunk"
+    "revision": "833814293b16239068e3d7dfb87fd3353040c9d3",
+    "type": "git",
+    "url": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Facing Direction/Facing Direction Base"
   }
 }
