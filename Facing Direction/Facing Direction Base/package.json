@@ -1,0 +1,20 @@
+{
+  "description": "Base package for other facing direction packages.",
+  "displayName": "CURGLAFF Facing Direction Base",
+  "keywords": [
+    "gameplay"
+  ],
+  "name": "com.clouds.facing_base",
+  "readme": "",
+  "version": "0.0.2",
+  "hideInEditor": false,
+  "dependencies": {
+    "com.unity.mathematics": "1.1.0",
+    "com.unity.burst": "1.1.0"
+  },
+  "repository": {
+    "revision": "7",
+    "type": "svn",
+    "url": "svn://curglaff.dynu.net/Packages/com.clouds.facing_base/trunk"
+  }
+}

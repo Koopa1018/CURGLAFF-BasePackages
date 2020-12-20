@@ -1,0 +1,22 @@
+{
+  "description": "A generally-useful component to describe direction a character or object is facing, using only integers. This means only the 8 compass directions are available.",
+  "displayName": "CURGLAFF Facing Direction - 8-way",
+  "keywords": [
+    "2d",
+    "gameplay"
+  ],
+  "name": "com.clouds.facing_8way",
+  "readme": "",
+  "version": "0.1.0",
+  "hideInEditor": false,
+  "dependencies": {
+    "com.unity.mathematics": "1.1.0",
+    "com.unity.burst": "1.1.0",
+    "com.clouds.facing_base": "0.0.1"
+  },
+  "repository": {
+    "revision": "9",
+    "type": "svn",
+    "url": "svn://curglaff.dynu.net/Packages/com.clouds.facing_8way/trunk"
+  }
+}

@@ -1,0 +1,37 @@
+{
+    "name": "Clouds.FacingDirection.8Way",
+    "references": [
+        "Unity.Mathematics",
+        "Unity.Burst",
+        "Unity.Entities",
+        "Unity.Entities.Hybrid",
+        "Clouds.FacingDirection.Base",
+        "Clouds.FacingDirection",
+        "Clouds.Inputs"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.entities",
+            "expression": "",
+            "define": "UNITY_ENTITIES"
+        },
+        {
+            "name": "com.clouds.facing_2d",
+            "expression": "",
+            "define": "CLOUDS_FACING_FLOAT"
+        },
+        {
+            "name": "com.clouds.input_base",
+            "expression": "",
+            "define": "CLOUDS_INPUT"
+        }
+    ],
+    "noEngineReferences": false
+}
