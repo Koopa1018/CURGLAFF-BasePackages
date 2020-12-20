@@ -10,18 +10,19 @@ To add a Facing Direction package, first add the Facing Direction Base package:
 https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Facing Direction/Facing Direction Base
 ```
 
-Then add the URL of the package you need (more details below)
-2D:
+Then add the URL of the package you need (details on the packages can be found below).
+
+*2D:*
 ```
 https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Facing Direction/Facing Direction 2D
 ```
 
-3D:
+*3D:*
 ```
 https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Facing Direction/Facing Direction 3D
 ```
 
-8-Way:
+*8-Way:*
 ```
 https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Facing Direction/Facing Direction 8 Way
 ```
