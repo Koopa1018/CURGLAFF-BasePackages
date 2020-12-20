@@ -1,4 +1,4 @@
-# CURGLAFF-FacingDirection
+# Facing Direction
 Simple data components for Unity which store and represent a direction an object is facing.
 
 Variants are available both for systems which do and for systems which do not need to know when objects are facing upwards.
@@ -38,6 +38,6 @@ This component is helpful in systems where characters and objects move on a plan
 Facing 3D represents facing direction as a `float2` and a `float`: `float2` for the XY plane, `float` representing how far up/down it's looking.
 This component is useful in 3D games where looking up/down changes movement (e.g. flight sims) or aim direction (e.g. shooters of any kind).
 
-##Facing 8-Way
+## Facing 8-Way
 Facing 8-Way represents facing direction as an `int2`. Like Facing 2D, each axis is stored individually; however, the values can only consist of the eight cardinal directions, as well as `(0,0)`.
 To allow analog and touch input, this component should only be used in systems where left/right facing and up/down facing interact with gameplay in completely separate ways, e.g. a 2D platformer where you can walk left and right, but only look up and down. If the game features a climbing system with unconstrained eight-directional movement, consider switching to Facing 2D while climbing is active.
