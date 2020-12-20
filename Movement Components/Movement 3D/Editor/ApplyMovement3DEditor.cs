@@ -1,0 +1,104 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
+using Unity.Mathematics;
+
+using Clouds.Collision3D;
+
+namespace Clouds.Movement3D {
+	[CustomEditor(typeof(ApplyMovement3D), true)]
+	public class ApplyMovement3DEditor : Editor {
+		SerializedProperty myVelocityField;
+
+		void OnEnable () {
+			myVelocityField = serializedObject.FindProperty("velocity");
+		}
+
+		public override void OnInspectorGUI () {
+			//Run main editor.
+			base.OnInspectorGUI();
+
+			//Separate main from debug info.
+			EditorGUILayout.Space();
+
+			//Show debug info.
+			ReportVelocityApplier();
+			ReportCollisionHandler();
+		}
+
+		void ReportCollisionHandler () {
+			MonoBehaviour collisionComponent = (target as MonoBehaviour)
+												.gameObject
+												.GetComponentInChildren<ICollisionHandler3D>()
+												as MonoBehaviour;
+
+			if (collisionComponent != null) {
+				GameObject owner = collisionComponent.gameObject;
+				string objectName = 
+					owner == (target as MonoBehaviour).gameObject ?
+						"this object"
+					:
+						owner.name
+				;
+
+
+				EditorGUILayout.HelpBox(
+	$"ApplyMovement3D will also reference {objectName}'s {collisionComponent.GetType().ToString()} at runtime.",
+					MessageType.Info
+				);
+
+			} else {
+				EditorGUILayout.HelpBox(
+	@"ApplyMovement3D doesn't have a collision-handler component on its GameObject.
+Output will not be affected by collisions.",
+					MessageType.Warning
+				);
+			}
+		}
+
+		void ReportVelocityApplier () {
+			IClearVelocity3D[] handlerCandidates = (target as MonoBehaviour)
+													.gameObject
+													.GetComponentsInChildren<IClearVelocity3D>();
+			MonoBehaviour veloHandler = null;
+			Velocity3D myVelocity = (Velocity3D)myVelocityField.objectReferenceValue;
+			
+			foreach (IClearVelocity3D c in handlerCandidates) {
+				if (c.EDI_velocityReference == (Velocity3D)myVelocityField.objectReferenceValue) {
+					veloHandler = (MonoBehaviour)c;
+					break;
+				}
+			}
+
+			if (veloHandler != null) {
+				GameObject owner = veloHandler.gameObject;
+				string objectName = 
+					owner == (target as MonoBehaviour).gameObject ?
+						"this object"
+					:
+						owner.name
+				;
+
+
+				EditorGUILayout.HelpBox(
+	$"ApplyMovement3D will reference {objectName}'s {veloHandler.GetType().ToString()} at runtime.",
+					MessageType.Info
+				);
+
+			} else {
+				GameObject owner = (target as MonoBehaviour).gameObject;
+				EditorGUILayout.HelpBox(
+	@"There is no ClearVelocity3DOn_____ component within this game object hierarchy.
+To avoid unexpected behavior, please ensure that some such component clears this velocity3D.",
+					MessageType.Warning
+				);
+				if (GUILayout.Button("Add ClearVelocity3DOnBeginFixedUpdate")) {
+					var veloClearer = owner.AddComponent<ClearVelocity3DOnBeginFixedUpdate>();
+					veloClearer.EDI_velocityReference = myVelocity;
+				}
+			}
+		}
+
+	}
+}

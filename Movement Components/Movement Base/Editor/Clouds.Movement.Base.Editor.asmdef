@@ -1,0 +1,17 @@
+{
+    "name": "Clouds.Movement.Base.Editor",
+    "references": [
+        "GUID:1c460ad219a8b374eb6a4f64457a606e"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
