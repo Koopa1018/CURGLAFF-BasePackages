@@ -15,13 +15,13 @@ namespace Clouds.Facing2D
 #endif
 	 {
 		[Tooltip("The direction we should start out facing.")]
-		/*[HideInInspector]*/ public int2 Value = 0;
+		/*[HideInInspector]*/ public float2 Value = 0;
 
-		public int x {
+		public float x {
 			get => Value.x;
 			set => Value.x = value;
 		}
-		public int y {
+		public float y {
 			get => Value.y;
 			set => Value.y = value;
 		}
@@ -32,6 +32,8 @@ namespace Clouds.Facing2D
 		/// <returns>The angle represented by the current facing direction.</returns>
 		[BurstCompile]
 		public float angle () {
+			//@TODO: Stress-test me! This function _only maybe_ works as intended.
+			
 			//Calculate the initial angle.
 			float returner = math.acos(math.dot(new float2(0,-1), normalized())) / (2*(float)math.PI);
 			//Make it cycle around all the way to 360*.

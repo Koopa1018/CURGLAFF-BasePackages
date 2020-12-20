@@ -14,29 +14,69 @@ namespace Clouds.Facing3D
 	, IConvertGameObjectToEntity
 #endif
 	 {
-		[Tooltip("The direction we should start out facing.")]
-		/*[HideInInspector]*/ public float2 Value = 0;
+		[Tooltip("The direction we should start out facing on the XZ (ground) plane.")]
+		/*[HideInInspector]*/ public float2 PlanarValue = 0;
+		[Tooltip("The up-and-down direction we should start out facing.")]
+		/*[HideInInspector]*/ public float UpDownValue = 0;
 
-		public float horizontal {
-			get => Value.x;
-			set => Value.x = value % 1;
+		/// <summary>
+		/// The X component of the planar facing direction.
+		/// </summary>
+		public float x {
+			get => PlanarValue.x;
+			set => PlanarValue.x = math.clamp(value, -1, 1);
 		}
-		public float vertical {
-			get => Value.y;
-			set => Value.y = value % 1;
+		/// <summary>
+		/// The Z component of the planar facing direction.
+		/// </summary>
+		public float z {
+			get => PlanarValue.y;
+			set => PlanarValue.y = math.clamp(value, -1, 1);
+		}
+
+		/// <summary>
+		/// The up/down facing direction stored as an angle between -1 (down) and 1 (up).
+		/// </summary>
+		public float upDown {
+			get => UpDownValue;
+			set => UpDownValue = math.clamp(value, -1, 1);
 		}
 
 		[BurstCompile]
 		public float3 direction () {
-			//Return (0,0,1) [forward on Z] rotated around X, then around Y.
-			return quaternion.AxisAngle(new float3(0,1,0), horizontal) * (
-				quaternion.AxisAngle(new float3(1,0,0), vertical) * new float3(0,0,1)
-			);
+			float2 forwardVector = new float3(x,0,z);
+			float2 sidewaysVector = new float3(-z,0,x);
+			//Return forward vector rotated around sideways vector.
+			return quaternion.AxisAngle(sidewaysVector, upDown) * forwardVector;
+		}
+
+		/// <summary>
+		/// Calculates the angle represented by the current facing direction, up to 360* (normalized to 1).
+		/// </summary>
+		/// <returns>The angle represented by the current facing direction.</returns>
+		[BurstCompile]
+		public float angle () {
+			//@TODO: Stress-test me! This function _only maybe_ works as intended.
+			
+			//Calculate the initial angle.
+			float returner = math.acos(math.dot(new float2(0,-1), normalized())) / (2*(float)math.PI);
+			//Make it cycle around all the way to 360*.
+			returner = math.select(returner, 1-returner, x < 0);
+
+			return returner;
+		}
+
+		public float signedAngle () {
+			return Vector2.SignedAngle(Vector2.up, math.normalize(Value));
+		}
+		[BurstCompile]
+		public float2 normalized () {
+			return math.normalize(PlanarValue);
 		}
 
 #if UNITY_ENTITIES
 		public void Convert (Entity e, EntityManager em, GameObjectConversionSystem gocs) {
-			em.AddComponentData(e, new FacingDirectionComponent3D(Value));
+			em.AddComponentData(e, new FacingDirectionComponent3D(PlanarValue));
 		}
 #endif
 

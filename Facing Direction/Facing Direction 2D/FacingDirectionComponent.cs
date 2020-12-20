@@ -6,22 +6,22 @@ using Unity.Burst;
 namespace Clouds.Facing2D
 {
 	public struct FacingDirectionComponent : IComponentData {
-		public int2 Value;
+		public float2 Value;
 
-		public int x {
+		public float x {
 			get => Value.x;
 			set => Value.x = value;
 		}
-		public int y {
+		public float y {
 			get => Value.y;
 			set => Value.y = value;
 		}
 
-		public FacingDirectionComponent (int2 facingXY) {
+		public FacingDirectionComponent (float2 facingXY) {
 			Value = facingXY;
 		}
-		public FacingDirectionComponent (int facingX, int facingY) {
-			Value = new int2(facingX, facingY);
+		public FacingDirectionComponent (float facingX, float facingY) {
+			Value = new float2(facingX, facingY);
 		}
 
 	}
