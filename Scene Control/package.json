@@ -6,11 +6,11 @@
   ],
   "name": "com.clouds.scenecontrol",
   "readme": "",
-  "repoPackagePath": "C:/VersionControlled/Unity Packages/com.clouds.scenecontrol",
+  "repoPackagePath": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Scene Control",
   "repository": {
-    "revision": "16",
-    "type": "svn",
-    "url": "svn://curglaff.dynu.net/Packages/com.clouds.scenecontrol/trunk"
+    "revision": "ee6280bc80a4c8fa8bd4a8a91198538d56037939",
+    "type": "git",
+    "url": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Scene Control"
   },
   "version": "1.0.3",
   "hideInEditor": false
