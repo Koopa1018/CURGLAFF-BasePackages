@@ -7,11 +7,11 @@
   ],
   "name": "com.clouds.physics3d_utils",
   "readme": "",
-  "repoPackagePath": "C:/VersionControlled/Unity Packages/com.clouds.physics3d_utils",
+  "repoPackagePath": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Utility/Physics",
   "repository": {
-    "revision": "9",
-    "type": "svn",
-    "url": "svn://curglaff.dynu.net/Packages/com.clouds.physics2d_utils/trunk"
+    "revision": "b14a62be8cc1bd9532477a48decb47ac27b52c42",
+    "type": "git",
+    "url": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Utility/Physics"
   },
   "version": "0.0.1",
   "hideInEditor": false,
