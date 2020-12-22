@@ -1,17 +1,17 @@
 {
   "description": "Types and structures for in-game movement, common between 2D and 3D. Includes ECS and MonoBehaviour functionality.",
-  "displayName": "CURGLAFF Movement Components Base",
+  "displayName": "CURGLAFF Generic Movement Base",
   "keywords": [
     "general"
   ],
   "name": "com.clouds.movement_base",
   "readme": "",
-  "repoPackagePath": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Movement Components/Movement Base",
+  "repoPackagePath": "C:/VersionControlled/Unity Packages/com.clouds.movement_base",
   "repository": {
-    "revision": "6",
-    "type": "git",
-    "url": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Movement Components/Movement Base"
+    "revision": "8",
+    "type": "svn",
+    "url": "svn://curglaff.dynu.net/Packages/com.clouds.movement_base/trunk"
   },
-  "version": "0.2.3",
+  "version": "1.0.0",
   "hideInEditor": false
 }

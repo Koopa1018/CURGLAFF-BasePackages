@@ -1,18 +1,18 @@
 {
   "description": "Generic classes for applying movement in 3D. ECS and MonoBehaviour functionality included.",
-  "displayName": "CURGLAFF Movement Components 3D",
+  "displayName": "CURGLAFF Generic Movement 3D",
   "keywords": [
     "general"
   ],
   "name": "com.clouds.movement_3d",
   "readme": "",
-  "repoPackagePath": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Movement Components/Movement 3D",
+  "repoPackagePath": "svn://curglaff.dynu.net/Packages/com.clouds.movement_3D/trunk",
   "repository": {
     "revision": "22",
-    "type": "git",
-    "url": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Movement Components/Movement 3D"
+    "type": "svn",
+    "url": "svn://curglaff.dynu.net/Packages/com.clouds.movement_3D/trunk"
   },
-  "version": "0.2.3",
+  "version": "1.0.0",
   "dependencies": {
     "com.unity.mathematics": "1.0.0",
     "com.unity.burst": "1.1.0",

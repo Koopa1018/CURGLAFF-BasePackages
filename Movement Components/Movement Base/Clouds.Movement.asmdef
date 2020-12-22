@@ -1,11 +1,12 @@
 {
-    "name": "Clouds.Movement.2D",
+    "name": "Clouds.Movement",
+    "rootNamespace": "Clouds.Movement[2D/3D/Base]",
     "references": [
         "Unity.Mathematics",
         "Unity.Entities",
+        "Unity.Entities.Hybrid",
         "Unity.Transforms",
-        "Unity.Burst",
-        "Clouds.Movement.Base"
+        "Unity.Burst"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

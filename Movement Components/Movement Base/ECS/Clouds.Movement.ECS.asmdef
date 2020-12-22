@@ -1,9 +1,11 @@
 {
-    "name": "Clouds.Movement.Base",
+    "name": "Clouds.Movement.ECS",
+    "rootNamespace": "",
     "references": [
         "Unity.Mathematics",
         "Unity.Entities",
-        "Unity.Transforms"
+        "Unity.Transforms",
+        "Unity.Burst"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -11,7 +13,9 @@
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
-    "defineConstraints": [],
+    "defineConstraints": [
+        "UNITY_ENTITIES"
+    ],
     "versionDefines": [
         {
             "name": "com.unity.entities",
