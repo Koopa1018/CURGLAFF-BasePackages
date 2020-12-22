@@ -7,11 +7,11 @@
   ],
   "name": "com.clouds.physics2d_utils",
   "readme": "",
-  "repoPackagePath": "http://curglaff.dynu.net/Unity Packages/com.clouds.physics2d_utils",
+  "repoPackagePath": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Utility/Physics2D",
   "repository": {
-    "revision": "8",
-    "type": "svn",
-    "url": "svn://curglaff.dynu.net/Packages/com.clouds.physics2d_utils/trunk/2D"
+    "revision": "b14a62be8cc1bd9532477a48decb47ac27b52c42",
+    "type": "git",
+    "url": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Utility/Physics2D"
   },
   "version": "0.0.3",
   "hideInEditor": false,
