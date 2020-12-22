@@ -1,0 +1,24 @@
+{
+  "description": "Utility extensions and classes for using Unity's Physics system.",
+  "displayName": "CURGLAFF Physics Utilities",
+  "keywords": [
+    "2d",
+    "utilities"
+  ],
+  "name": "com.clouds.physics3d_utils",
+  "readme": "",
+  "repoPackagePath": "C:/VersionControlled/Unity Packages/com.clouds.physics3d_utils",
+  "repository": {
+    "revision": "9",
+    "type": "svn",
+    "url": "svn://curglaff.dynu.net/Packages/com.clouds.physics2d_utils/trunk"
+  },
+  "version": "0.0.1",
+  "hideInEditor": false,
+  "dependencies": {
+    "com.unity.modules.physics2d": "1.0.0",
+    "com.unity.mathematics": "1.0.0",
+    "com.unity.burst": "1.0.0"
+  },
+  "type": "library"
+}
