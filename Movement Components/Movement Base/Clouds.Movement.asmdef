@@ -6,7 +6,8 @@
         "Unity.Entities",
         "Unity.Entities.Hybrid",
         "Unity.Transforms",
-        "Unity.Burst"
+        "Unity.Burst",
+        "Clouds.Movement.ECS"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

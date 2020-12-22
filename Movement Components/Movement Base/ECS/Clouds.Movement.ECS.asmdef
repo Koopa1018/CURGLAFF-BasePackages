@@ -1,6 +1,6 @@
 {
     "name": "Clouds.Movement.ECS",
-    "rootNamespace": "",
+    "rootNamespace": "Clouds.Movement[2D/3D/Base].ECS",
     "references": [
         "Unity.Mathematics",
         "Unity.Entities",
