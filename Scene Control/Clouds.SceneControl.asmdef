@@ -1,0 +1,34 @@
+{
+    "name": "Clouds.SceneControl",
+    "references": [
+        "GUID:d8b63aba1907145bea998dd612889d6b",
+        "GUID:35d291e4c91de70499df28144e8ff4c8",
+        "GUID:c63af4a0c7159984fa642af303bb626b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [
+        ""
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.clouds.screentransitions",
+            "expression": "0.1.0",
+            "define": "CLOUDS_TRANSITIONS"
+        },
+        {
+            "name": "com.clouds.facing_2d",
+            "expression": "",
+            "define": "CLOUDS_FACING_2D"
+        },
+        {
+            "name": "com.clouds.facing_8way",
+            "expression": "",
+            "define": "CLOUDS_FACING_8WAY"
+        }
+    ]
+}

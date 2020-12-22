@@ -1,0 +1,17 @@
+{
+  "description": "Common interface for interacting with scenes.",
+  "displayName": "CURGLAFF Scene Control",
+  "keywords": [
+    "general"
+  ],
+  "name": "com.clouds.scenecontrol",
+  "readme": "",
+  "repoPackagePath": "C:/VersionControlled/Unity Packages/com.clouds.scenecontrol",
+  "repository": {
+    "revision": "16",
+    "type": "svn",
+    "url": "svn://curglaff.dynu.net/Packages/com.clouds.scenecontrol/trunk"
+  },
+  "version": "1.0.3",
+  "hideInEditor": false
+}

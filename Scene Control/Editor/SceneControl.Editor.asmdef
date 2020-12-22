@@ -1,0 +1,16 @@
+{
+    "name": "Clouds.SceneControl.Editor",
+    "references": [
+        "Clouds.SceneControl"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": []
+}
