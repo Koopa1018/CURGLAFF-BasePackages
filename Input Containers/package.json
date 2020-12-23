@@ -1,17 +1,16 @@
 {
-  "description": "Foundational code for working with CURGLAFF-style input components.",
-  "displayName": "CURGLAFF Input Base",
+  "description": "Components for containing player inputs until they're passed to movement code. Can contain AI inputs just as easily.",
+  "displayName": "CURGLAFF Input Containers",
   "keywords": [
-    "2d",
-    "utilities"
+    "input"
   ],
   "name": "com.clouds.input_base",
-  "readme": "",
-  "repoPackagePath": "svn://curglaff.dynu.net/Packages/com.clouds.input_base/trunk",
+  "readme": "README.md",
+  "repoPackagePath": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Input Containers",
   "repository": {
-    "revision": "20",
-    "type": "svn",
-    "url": "svn://curglaff.dynu.net/Packages/com.clouds.input_base/trunk"
+    "revision": "dc9bf26e5c18859bcc37b52dc4310b22c211ee8c",
+    "type": "git",
+    "url": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Input Containers"
   },
   "version": "0.0.9",
   "hideInEditor": false,
