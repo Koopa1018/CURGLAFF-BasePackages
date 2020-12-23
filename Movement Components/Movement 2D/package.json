@@ -12,7 +12,7 @@
     "type": "git",
     "url": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Movement Components/Movement 2D#5258aeff3fbb56598408a77261764ed3d945a66f"
   },
-  "version": "3.0.0",
+  "version": "3.0.1",
   "dependencies": {
     "com.unity.mathematics": "1.0.0",
     "com.unity.burst": "1.1.0",
