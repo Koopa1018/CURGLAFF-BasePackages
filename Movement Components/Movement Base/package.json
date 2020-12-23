@@ -6,12 +6,12 @@
   ],
   "name": "com.clouds.movement_base",
   "readme": "",
-  "repoPackagePath": "C:/VersionControlled/Unity Packages/com.clouds.movement_base",
+  "repoPackagePath": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Movement Components/Movement Base#5258aeff3fbb56598408a77261764ed3d945a66f",
   "repository": {
-    "revision": "8",
-    "type": "svn",
-    "url": "svn://curglaff.dynu.net/Packages/com.clouds.movement_base/trunk"
+    "revision": "5258aeff3fbb56598408a77261764ed3d945a66f",
+    "type": "git",
+    "url": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Movement Components/Movement Base#5258aeff3fbb56598408a77261764ed3d945a66f"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "hideInEditor": false
 }
