@@ -35,9 +35,4 @@ namespace Clouds.PlayerInput {
 			//Here as a stub, to show that we DO NOT clear signal inputs on disable this guy.
 		}
 	}
-
-	public interface IGenerateInputSignals {
-		void GenerateInputSignal ();
-		void ClearInputSignal ();
-	}
 }
