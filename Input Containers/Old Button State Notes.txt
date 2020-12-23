@@ -1,0 +1,33 @@
+if wasPressed and button and last:
+	state = pressed
+	state = held & pressed
+
+if !wasPressed and button and last:
+	state = none
+	state = held
+
+if wasPressed and button and !last:
+	state = pressed
+	state = held & pressed
+	state = held & pressed
+
+if !wasPressed and button and !last:
+	state = none
+	state = held
+	state = held & pressed
+
+if wasPressed and !button and last:
+	state = pressed
+	state = released & pressed
+
+if !wasPressed and !button and last:
+	state = none
+	state = released
+
+if wasPressed and !button and !last:
+	state = pressed
+	state = none
+
+if !wasPressed and !button and !last:
+	state = none
+	state = none
