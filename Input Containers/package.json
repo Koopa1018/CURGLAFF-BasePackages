@@ -15,6 +15,7 @@
   "version": "0.0.9",
   "hideInEditor": false,
   "dependencies": {
+    "com.unity.mathematics": "1.0.0"
   },
   "type": "library"
 }

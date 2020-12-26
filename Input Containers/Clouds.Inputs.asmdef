@@ -1,8 +1,8 @@
 {
     "name": "Clouds.Inputs",
+    "rootNamespace": "",
     "references": [
-        "Unity.Mathematics",
-        "Clouds.Movement.2D"
+        "Unity.Mathematics"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
