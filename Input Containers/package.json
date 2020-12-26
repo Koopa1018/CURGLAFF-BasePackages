@@ -6,11 +6,11 @@
   ],
   "name": "com.clouds.input_base",
   "readme": "README.md",
-  "repoPackagePath": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Input Containers",
+  "repoPackagePath": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Input Containers#be5bda9280cbca5446d3bcc4de8a0a7d0c11d13f",
   "repository": {
-    "revision": "dc9bf26e5c18859bcc37b52dc4310b22c211ee8c",
+    "revision": "be5bda9280cbca5446d3bcc4de8a0a7d0c11d13f",
     "type": "git",
-    "url": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Input Containers"
+    "url": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Input Containers#be5bda9280cbca5446d3bcc4de8a0a7d0c11d13f"
   },
   "version": "0.0.9",
   "hideInEditor": false,
