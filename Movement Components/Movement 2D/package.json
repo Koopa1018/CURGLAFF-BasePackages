@@ -6,11 +6,11 @@
   ],
   "name": "com.clouds.movement_2d",
   "readme": "",
-  "repoPackagePath": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Movement Components/Movement 2D#5258aeff3fbb56598408a77261764ed3d945a66f",
+  "repoPackagePath": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Movement Components/Movement 2D#dc78cfcf9f2e1f09c519a95313a1da0bc0240984",
   "repository": {
-    "revision": "5258aeff3fbb56598408a77261764ed3d945a66f",
+    "revision": "dc78cfcf9f2e1f09c519a95313a1da0bc0240984",
     "type": "git",
-    "url": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Movement Components/Movement 2D#5258aeff3fbb56598408a77261764ed3d945a66f"
+    "url": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Movement Components/Movement 2D#dc78cfcf9f2e1f09c519a95313a1da0bc0240984"
   },
   "version": "3.0.1",
   "dependencies": {
