@@ -18,21 +18,19 @@ namespace Clouds.PlayerInput {
 
 		//Every frame, have the signal producer do its thing.
 		void Update () {
-			//If the signal producer is non-enabled, abort.
-			MonoBehaviour signalAsBeh = signalProducer as MonoBehaviour;
-			if (!signalAsBeh.isActiveAndEnabled) {
-				//Wipe input on producer disabled, so we don't end up with hanging input.
-				signalProducer.ClearInputSignal();
-
+			//If the signal producer is non-enabled, abort and leave it hanging.
+			if (!(signalProducer as MonoBehaviour).isActiveAndEnabled) {
 				return;
 			}
 			
+			//Signal producer is enabled.
 			signalProducer.GenerateInputSignal();
 		}
 
 		
 		void OnDisable () {
-			//Here as a stub, to show that we DO NOT clear signal inputs on disable this guy.
+			//Wipe input, so we don't end up with hanging input.
+			signalProducer.ClearInputSignal();
 		}
 	}
 }
