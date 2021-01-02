@@ -7,24 +7,24 @@ Additionally, an integer-based variant is provided for systems that only care *w
 # Checkout URLs
 To add a Facing Direction package, first add the Facing Direction Base package:
 ```
-https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Facing Direction/Facing Direction Base
+https://github.com/Koopa1018/CURGLAFF-BasePackages.git?path=/Facing Direction/Facing Direction Base#5129c2ad945b161137076d739054c454e4e966eb
 ```
 
 Then add the URL of the package you need (details on the packages can be found below).
 
 *2D:*
 ```
-https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Facing Direction/Facing Direction 2D
+https://github.com/Koopa1018/CURGLAFF-BasePackages.git?path=/Facing Direction/Facing Direction 2D5129c2ad945b161137076d739054c454e4e966eb
 ```
 
 *3D:*
 ```
-https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Facing Direction/Facing Direction 3D
+https://github.com/Koopa1018/CURGLAFF-BasePackages.git?path=/Facing Direction/Facing Direction 3D#5129c2ad945b161137076d739054c454e4e966eb
 ```
 
 *8-Way:*
 ```
-https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Facing Direction/Facing Direction 8 Way
+https://github.com/Koopa1018/CURGLAFF-BasePackages.git?path=/Facing Direction/Facing Direction 8 Way#5129c2ad945b161137076d739054c454e4e966eb
 ```
 
 # Packages
