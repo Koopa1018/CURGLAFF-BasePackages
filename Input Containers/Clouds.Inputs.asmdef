@@ -2,7 +2,8 @@
     "name": "Clouds.Inputs",
     "rootNamespace": "",
     "references": [
-        "Unity.Mathematics"
+        "Unity.Mathematics",
+        "Unity.InputSystem"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
