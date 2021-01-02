@@ -40,6 +40,7 @@ namespace Clouds.ActionGame.Weapons {
 			strikeTimer = strikeDuration;
 			timerIsGoing = true;
 
+			myStrike.BeginNew();
 			onAttackBegin?.Invoke();
 		}
 
