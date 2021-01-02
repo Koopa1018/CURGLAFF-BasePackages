@@ -6,6 +6,7 @@ using Unity.Mathematics;
 using Clouds.Combat;
 
 namespace Clouds.ActionGame.Weapons {
+	[AddComponentMenu("Combat/I'm A Weapon Strike")]
 	public class WeaponStrike : MonoBehaviour, IAttack {
 		const int UNINITIALIZED = -32768;
 

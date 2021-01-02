@@ -6,6 +6,7 @@ using UnityEngine.Events;
 using Clouds.PlayerInput;
 
 namespace Clouds.ActionGame.Weapons {
+	[AddComponentMenu("Combat/I'm A Melee Attack")]
 	public class MeleeAttack : MonoBehaviour {
 		[System.Serializable]
 		struct HurtboxState {
