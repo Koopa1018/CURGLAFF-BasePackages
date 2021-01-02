@@ -2,16 +2,17 @@
   "description": "Common interface for interacting with scenes.",
   "displayName": "CURGLAFF Scene Control",
   "keywords": [
-    "general"
+    "general",
+    "scene", "scenes"
   ],
   "name": "com.clouds.scenecontrol",
-  "readme": "",
+  "readme": "README.md",
   "repoPackagePath": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Scene Control",
   "repository": {
     "revision": "ee6280bc80a4c8fa8bd4a8a91198538d56037939",
     "type": "git",
     "url": "https://github.com/Koopa1018/CURGLAFF-UnityFoundation.git?path=/Scene Control"
   },
-  "version": "1.0.3",
+  "version": "1.1.0",
   "hideInEditor": false
 }
