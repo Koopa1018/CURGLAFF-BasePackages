@@ -1,0 +1,23 @@
+{
+  "description": "Generic collection functioning as a playlist--going forward by itself, with optional shuffle and repeat functionality.",
+  "displayName": "CURGLAFF Generic Playlist",
+  "keywords": [
+    "collection",
+    "playlist",
+    "generic"
+  ],
+  "name": "com.clouds.generic.playlist",
+  "unity": "2018.3",
+  "readme": "README.md",
+  "repoPackagePath": "https://github.com/Koopa1018/CURGLAFF-BasePackages.git?path=/Generic/Playlist",
+  "repository": {
+    "revision": "",
+    "type": "git",
+    "url": "https://github.com/Koopa1018/CURGLAFF-BasePackages.git"
+  },
+  "version": "0.0.1",
+  "hideInEditor": false,
+  "dependencies": {
+    "com.unity.mathematics": "1.0.0"
+  }
+}
