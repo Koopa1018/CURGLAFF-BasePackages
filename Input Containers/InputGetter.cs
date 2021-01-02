@@ -17,7 +17,7 @@ namespace Clouds.PlayerInput {
 		}
 
 		//Every frame, have the signal producer do its thing.
-		void Update () {
+		void FixedUpdate () {
 			//If the signal producer is non-enabled, abort and leave it hanging.
 			if (!(signalProducer as MonoBehaviour).isActiveAndEnabled) {
 				return;
