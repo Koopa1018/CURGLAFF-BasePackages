@@ -6,7 +6,6 @@
         "Clouds.Inputs",
         "Clouds.Generic.Playlist",
         "Clouds.Combat.Base",
-        "Clouds.TriggeredInteractions",
         "ScriptOperatedAnimation"
     ],
     "includePlatforms": [],

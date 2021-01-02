@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Events;
 
 using Clouds.Combat;
-using Clouds.TriggeredInteractions;
 
 namespace Clouds.ActionGame.Weapons {
 	[RequireComponent(typeof(ReactToWeaponStrike))]

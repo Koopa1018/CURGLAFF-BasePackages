@@ -7,11 +7,10 @@
   "name": "com.clouds.combat.action",
   "version": "0.0.1",
   "dependencies": {
-	  "com.unity.mathematics" : "1.0.0",
-	  "com.clouds.input_base" : "0.0.9",
-	  "com.clouds.generic.playlist" : "0.0.1",
-	  "com.clouds.combat" : "0.0.1",
-	  "com.clouds.triggers" : "0.0.1"
+    "com.unity.mathematics": "1.0.0",
+    "com.clouds.input_base": "0.0.9",
+    "com.clouds.generic.playlist": "0.0.1",
+    "com.clouds.combat": "0.0.1"
   },
   "repoPackagePath": "https://github.com/Koopa1018/CURGLAFF-BasePackages.git?path=/Combat/Action",
   "repository": {
@@ -20,10 +19,10 @@
     "url": "https://github.com/Koopa1018/CURGLAFF-BasePackages.git"
   },
   "samples": [
-     {
-       "displayName": "Plain Sword",
-       "description": "Prebuilt sword-slash prefab with two animations and 8-bit sounds (not used by default).",
-       "path": "Samples/Plain Sword"
-     }
-   ]
+    {
+      "displayName": "Plain Sword",
+      "description": "Prebuilt sword-slash prefab with two animations and 8-bit sounds (not used by default).",
+      "path": "Samples/Plain Sword"
+    }
+  ]
 }
