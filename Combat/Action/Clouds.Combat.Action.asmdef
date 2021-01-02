@@ -1,0 +1,21 @@
+{
+    "name": "Clouds.Combat.Action",
+    "rootNamespace": "",
+    "references": [
+        "Unity.Mathematics",
+        "Clouds.Inputs",
+        "Clouds.Generic.Playlist",
+        "Clouds.Combat.Base",
+        "Clouds.TriggeredInteractions",
+        "ScriptOperatedAnimation"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
