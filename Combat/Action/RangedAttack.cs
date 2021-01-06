@@ -27,13 +27,11 @@ namespace Clouds.ActionGame.Weapons {
 			if (strikeTimer > 0) {
 				return;
 			}
-			GetComponent<Animation>().SetClip(attackAnimations.GetNext());
-			GetComponent<Animation>().Play();
+			myStrike.BeginNew();
 
 			strikeTimer = shotLifetime;
 			timerIsGoing = shotLifetime > 0;
 
-			myStrike.BeginNew();
 			onAttackBegin?.Invoke();
 		}
 
@@ -42,12 +40,9 @@ namespace Clouds.ActionGame.Weapons {
 			strikeTimer = Mathf.Max(strikeTimer, 0);
 
 			if (timerIsGoing && strikeTimer == 0) {
-				onAttackFizzle?.Invoke();
-
 				timerIsGoing = false;
 				
-				GetComponent<Animation>().SetClip(fizzleAnimations.GetNext());
-				GetComponent<Animation>().Play();
+				onAttackFizzle?.Invoke();
 			}
 		}
 
