@@ -10,17 +10,14 @@ namespace Clouds.ActionGame.Weapons {
 	public class RangedAttack : MonoBehaviour {
 		[Header("Outputs")]
 		[SerializeField] WeaponStrike myStrike;
-		[SerializeField] new ScriptOperatedAnimation animation;
 
 		[Header("Properties")]
-		[SerializeField] Clouds.Generic.Playlist<AnimationClip> attackAnimations;
-		[SerializeField] Clouds.Generic.Playlist<AnimationClip> fizzleAnimations;
-		[SerializeField] Clouds.Generic.Playlist<AnimationClip> hitAnimations; //not yet used
 		[SerializeField] float shotLifetime = 1f;
 
 		[Header("Events")]
 		[SerializeField] UnityEvent onAttackBegin;
-		[SerializeField] UnityEvent onAttackEnd;
+		[SerializeField] UnityEvent onAttackFizzle;
+		[SerializeField] UnityEvent onAttackHit; //not yet used
 
 		float strikeTimer = 0;
 		bool timerIsGoing = false;
@@ -30,11 +27,11 @@ namespace Clouds.ActionGame.Weapons {
 			if (strikeTimer > 0) {
 				return;
 			}
-			animation.SetClip(attackAnimations.GetNext());
-			animation.Play();
+			GetComponent<Animation>().SetClip(attackAnimations.GetNext());
+			GetComponent<Animation>().Play();
 
 			strikeTimer = shotLifetime;
-			timerIsGoing = true;
+			timerIsGoing = shotLifetime > 0;
 
 			myStrike.BeginNew();
 			onAttackBegin?.Invoke();
@@ -45,12 +42,12 @@ namespace Clouds.ActionGame.Weapons {
 			strikeTimer = Mathf.Max(strikeTimer, 0);
 
 			if (timerIsGoing && strikeTimer == 0) {
-				onAttackEnd.Invoke();
+				onAttackFizzle?.Invoke();
 
 				timerIsGoing = false;
 				
-				animation.SetClip(fizzleAnimations.GetNext());
-				animation.Play();
+				GetComponent<Animation>().SetClip(fizzleAnimations.GetNext());
+				GetComponent<Animation>().Play();
 			}
 		}
 

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2542112745615717385}
   - component: {fileID: 2542112745615717386}
   - component: {fileID: 2542112745615717398}
-  - component: {fileID: 2542112745615717399}
+  - component: {fileID: 7154392586144529599}
   - component: {fileID: 2542112745615717396}
   m_Layer: 0
   m_Name: Plain Sword
@@ -81,7 +81,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myStrike: {fileID: 2542112745615717385}
-  animation: {fileID: 2542112745615717399}
   attackAnimations:
     sequenceMode: 0
     repetitionMode: 0
@@ -92,10 +91,10 @@ MonoBehaviour:
   onAttackBegin:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
+      - m_Target: {fileID: 7154392586144529599}
+        m_TargetAssemblyTypeName: AnimationPlaylist, ScriptOperatedAnimation
+        m_MethodName: NextClip
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -171,7 +170,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2542112745615717399
+--- !u!114 &7154392586144529599
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,11 +179,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2542112745615717394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f051c3804a6dd4d8ecb0722b1d010e, type: 3}
+  m_Script: {fileID: 11500000, guid: ba6d2b83a95bd444986ba5a9fc541ef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playAutomatically: 0
+  playAutomatically: 1
   updateMode: 1
+  clips:
+    sequenceMode: 0
+    repetitionMode: 0
+    elements:
+    - {fileID: 7400000, guid: f1300ffdb753bc647a538d64fd65f0ea, type: 2}
+    - {fileID: 7400000, guid: 22b0cb237ae486640a64c4c2fe528d5e, type: 2}
 --- !u!50 &2542112745615717396
 Rigidbody2D:
   serializedVersion: 4
@@ -277,7 +282,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6739675204261383697, guid: 563570bb35d0b524e9fe719798b05c88, type: 3}
+  m_Sprite: {fileID: 6739675204261383697, guid: 563570bb35d0b524e9fe719798b05c88,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

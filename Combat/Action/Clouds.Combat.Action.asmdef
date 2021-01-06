@@ -4,7 +4,6 @@
     "references": [
         "Unity.Mathematics",
         "Clouds.Inputs",
-        "Clouds.Generic.Playlist",
         "Clouds.Combat.Base",
         "ScriptOperatedAnimation"
     ],

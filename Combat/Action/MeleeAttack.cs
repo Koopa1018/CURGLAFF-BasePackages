@@ -16,10 +16,8 @@ namespace Clouds.ActionGame.Weapons {
 
 		[Header("Outputs")]
 		[SerializeField] WeaponStrike myStrike;
-		[SerializeField] new ScriptOperatedAnimation animation;
 
 		[Header("Properties")]
-		[SerializeField] Clouds.Generic.Playlist<AnimationClip> attackAnimations;
 		[SerializeField] float strikeDuration = 0.15f;
 
 		[Header("Events")]
@@ -34,13 +32,11 @@ namespace Clouds.ActionGame.Weapons {
 			if (strikeTimer > 0) {
 				return;
 			}
-			animation.SetClip(attackAnimations.GetNext());
-			animation.Play();
+			myStrike.BeginNew();
 
 			strikeTimer = strikeDuration;
 			timerIsGoing = true;
 
-			myStrike.BeginNew();
 			onAttackBegin?.Invoke();
 		}
 
@@ -49,9 +45,9 @@ namespace Clouds.ActionGame.Weapons {
 			strikeTimer = Mathf.Max(strikeTimer, 0);
 
 			if (timerIsGoing && strikeTimer == 0) {
-				onAttackEnd.Invoke();
-
 				timerIsGoing = false;
+				
+				onAttackEnd?.Invoke();
 			}
 		}
 
