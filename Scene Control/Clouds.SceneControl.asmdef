@@ -1,9 +1,12 @@
 {
     "name": "Clouds.SceneControl",
+    "rootNamespace": "",
     "references": [
-        "GUID:d8b63aba1907145bea998dd612889d6b",
-        "GUID:35d291e4c91de70499df28144e8ff4c8",
-        "GUID:c63af4a0c7159984fa642af303bb626b"
+        "Unity.Mathematics",
+        "Clouds.Transitions",
+        "Clouds.FacingDirection.Base",
+        "Clouds.FacingDirection.2D",
+        "Clouds.FacingDirection.8Way"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -30,5 +33,6 @@
             "expression": "",
             "define": "CLOUDS_FACING_8WAY"
         }
-    ]
+    ],
+    "noEngineReferences": false
 }
