@@ -28,21 +28,10 @@ namespace Clouds.SceneManagement {
 #endif
 
 		static Vector3 _selectedSpawnPoint;
-		public static Vector3 SelectedSpawnPoint {
-			get {
-				//Copy the spawn point to tmp.
-				Vector3 returner = _selectedSpawnPoint;
-
-				//Consume this discovered spawn point.
-				_selectedSpawnPoint = Vector3.zero;
-
-				//Return the cached value.
-				return returner;
-			}
-		}
+		public static Vector3 SelectedSpawnPoint => _selectedSpawnPoint;
 
 		static bool _foundSpawnPoint = false;
-		public static bool SpawnPointIsValid {get => _foundSpawnPoint;}
+		public static bool SpawnPointIsValid => _foundSpawnPoint;
 
 		internal static Vector3 FindSpawnPoint (Scene scene, LoadSceneMode mode) {
 			//To track whether we've found a spawn point.
