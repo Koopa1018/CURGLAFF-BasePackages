@@ -8,6 +8,7 @@ using Unity.Entities;
 
 namespace Clouds.Facing2D
 {
+	[HelpURL("https://github.com/Koopa1018/CURGLAFF-BasePackages/wiki/Facing-Direction")]
 	[AddComponentMenu("Character/Facing Direction")]
 	public class FacingDirection : MonoBehaviour, IFacingDirection
 #if UNITY_ENTITIES
