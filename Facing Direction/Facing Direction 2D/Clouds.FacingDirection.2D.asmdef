@@ -1,5 +1,6 @@
 {
-    "name": "Clouds.FacingDirection",
+    "name": "Clouds.FacingDirection.2D",
+    "rootNamespace": "",
     "references": [
         "Unity.Mathematics",
         "Unity.Burst",
@@ -20,5 +21,6 @@
             "expression": "",
             "define": "UNITY_ENTITIES"
         }
-    ]
+    ],
+    "noEngineReferences": false
 }
