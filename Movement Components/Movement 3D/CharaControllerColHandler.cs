@@ -10,6 +10,7 @@ namespace Clouds.Collision3D
 	[AddComponentMenu("Collision 3D/Character Controller Collision Handler")]
 	public class CharaControllerColHandler : MonoBehaviour, ICollisionHandler3D {
 		[SerializeField] CharacterController charaCon3D;
+		[SerializeField] CollisionData3D hitOutput;
 		//[SerializeField] [Min(0)] float gradualDescendSpeed = 1;
 		[SerializeField] bool stickToGround = true;
 
@@ -21,20 +22,20 @@ namespace Clouds.Collision3D
 		public float3 ApplyCollisions (ref Velocity3D velocity) {
 			float3 oldPos = transform.position;
 
-			if (stickToGround) {
-				RaycastHit cast;
+			RaycastHit cast;
 				
-				//Do down cast.
-				Physics.SphereCast(
-					charaCon3D.center + (Vector3.down * charaCon3D.height * 0.5f),
-					charaCon3D.radius,
-					Vector3.down,
-					out cast,
-					float.PositiveInfinity,
-					~0, //Layer mask,
-					QueryTriggerInteraction.Ignore
-				);
+			//Do down cast.
+			Physics.SphereCast(
+				charaCon3D.center + (Vector3.down * charaCon3D.height * 0.5f),
+				charaCon3D.radius,
+				Vector3.down,
+				out cast,
+				float.PositiveInfinity,
+				~0, //Layer mask,
+				QueryTriggerInteraction.Ignore
+			);
 
+			if (stickToGround) {
 				if (cast.collider == null) {
 					//Do up cast.
 					Physics.SphereCast(
@@ -57,6 +58,8 @@ namespace Clouds.Collision3D
 			}
 
 			CollisionFlags hits = charaCon3D.Move(velocity.Value);
+			hits |= cast.collider != null ? CollisionFlags.Below : CollisionFlags.None;
+			hitOutput.cols = hits;
 
 			//Calculate the collision-recoil value.
 			float3 returner = (oldPos + velocity.Value) - (float3)(transform.position);
