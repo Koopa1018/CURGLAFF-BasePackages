@@ -59,7 +59,9 @@ namespace Clouds.Collision3D
 
 			CollisionFlags hits = charaCon3D.Move(velocity.Value);
 			hits |= cast.collider != null ? CollisionFlags.Below : CollisionFlags.None;
-			hitOutput.cols = hits;
+			if (hitOutput != null) {
+				hitOutput.cols = hits;
+			}
 
 			//Calculate the collision-recoil value.
 			float3 returner = (oldPos + velocity.Value) - (float3)(transform.position);
