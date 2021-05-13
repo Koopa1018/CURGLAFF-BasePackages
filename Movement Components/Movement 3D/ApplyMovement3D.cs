@@ -17,12 +17,13 @@ namespace Clouds.Movement3D {
 
 		void Awake () {
 			collisionHandler = GetComponent<ICollisionHandler3D>();
-#if UNITY_EDITOR
 			hasCols = collisionHandler != null;
+#if UNITY_EDITOR
 			if (!hasCols) {
 				Debug.Log("Movement on this object is being applied without collision handling.", this);
 			}
 #endif
+
 			hasRecoil = recoil != null;
 		}
 
@@ -63,7 +64,7 @@ namespace Clouds.Movement3D {
 
 				float3 velocityPreCol = velocity.Value;
 
-				collisionHandler?.ApplyCollisions(ref velocity);
+				collisionHandler.ApplyCollisions(ref velocity);
 
 				recoil.Value = velocityPreCol - velocity.Value;
 
