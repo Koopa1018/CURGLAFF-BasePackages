@@ -25,6 +25,10 @@ namespace Clouds.Movement3D {
 #endif
 
 			hasRecoil = recoil != null;
+
+			if (myTransform == null) {
+				myTransform = transform;
+			}
 		}
 
 #if CLOUDS_SYSTEM_MOVE3D
@@ -38,13 +42,13 @@ namespace Clouds.Movement3D {
 		void Update () {
 			if (!hasCols) {
 				//Apply the velocity to the position.
-				transform.Translate(velocity.Value, preferredTransformSpace);
+				myTransform.Translate(velocity.Value, preferredTransformSpace);
 			} else if (!hasRecoil) {
 				//If not has recoil, just apply collisions cleanly and without hassle.
 				collisionHandler.ApplyCollisions(ref velocity);
 				
 				//Apply the velocity to the position.
-				transform.Translate(velocity.Value, preferredTransformSpace);
+				myTransform.Translate(velocity.Value, preferredTransformSpace);
 			} else if (collisionHandler.useSlowRecoilComputations) {
 				//If has recoil and is meant to use slow computations, do slow computations.
 
@@ -55,7 +59,7 @@ namespace Clouds.Movement3D {
 				collisionHandler.ApplyCollisions(ref velocity);
 
 				//Apply the collided velocity to the position.
-				transform.Translate(velocity.Value, preferredTransformSpace);
+				myTransform.Translate(velocity.Value, preferredTransformSpace);
 
 				//Find the distance from uncollided to collided position--the delta movement from collision.
 				recoil.Value = originalPosition - (float3)transform.position;
@@ -69,7 +73,7 @@ namespace Clouds.Movement3D {
 				recoil.Value = velocityPreCol - velocity.Value;
 
 				//Apply the collided velocity to the position.
-				transform.Translate(velocity.Value, preferredTransformSpace);
+				myTransform.Translate(velocity.Value, preferredTransformSpace);
 			}
 		}
 #endif
