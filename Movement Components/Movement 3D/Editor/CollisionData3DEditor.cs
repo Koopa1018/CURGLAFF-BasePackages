@@ -7,10 +7,9 @@ namespace Clouds.Collision3D {
 	[CustomEditor(typeof(CollisionData3D))]
 	public class CollisionData3DEditor : Editor {
 		SerializedProperty value;
-		SerializedProperty showDebugInfo;
 
 		void OnEnable () {
-			value = serializedObject.FindProperty("Value");
+			value = serializedObject.FindProperty("_value");
 		}
 
 		public override void OnInspectorGUI () {

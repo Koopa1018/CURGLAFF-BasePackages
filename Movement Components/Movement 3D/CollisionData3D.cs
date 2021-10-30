@@ -3,5 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CollisionData3D : MonoBehaviour {
-	public CollisionFlags Value {get; internal set;}
+#if UNITY_EDITOR
+	[HideInInspector] [SerializeField] CollisionFlags _value;
+	public CollisionFlags Value {get => _value; set => _value = value;}
+#else
+	public CollisionFlags Value {get; set;}
+#endif
 }
