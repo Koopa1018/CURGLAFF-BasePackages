@@ -45,15 +45,15 @@ namespace Clouds.Collision3D
 				/*~0*/mask, //layer mask
 				QueryTriggerInteraction.Ignore
 			);
-			Debug.DrawRay(
-				transform.position + charaCon3D.center + Vector3.right,
-				Vector3.down * ((charaCon3D.height * 0.5f) + Mathf.Abs(velocity.y)),
-				Color.yellow
-			);
+			// Debug.DrawRay(
+			// 	transform.position + charaCon3D.center + Vector3.right,
+			// 	Vector3.down * ((charaCon3D.height * 0.5f) + Mathf.Abs(velocity.y)),
+			// 	Color.yellow
+			// );
 
 			if (didHit) {
-				Debug.Log("Desired ray distance is " + castLength);
-				Debug.Log("Hit distance is " + cast.distance);
+				//Debug.Log("Desired ray distance is " + castLength);
+				//Debug.Log("Hit distance is " + cast.distance);
 			}
 
 			if (stickToGround) {
