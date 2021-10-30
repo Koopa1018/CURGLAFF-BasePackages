@@ -9,6 +9,7 @@ namespace Clouds.Collision3D
 {
 	[AddComponentMenu("Collision 3D/Character Controller Collision Handler")]
 	public class CharaControllerColHandler : MonoBehaviour, ICollisionHandler3D {
+		[SerializeField] LayerMask mask;
 		[SerializeField] CharacterController charaCon3D;
 		[SerializeField] CollisionData3D hitOutput;
 		//[SerializeField] [Min(0)] float gradualDescendSpeed = 1;
@@ -25,15 +26,35 @@ namespace Clouds.Collision3D
 			RaycastHit cast;
 				
 			//Do down cast.
-			Physics.SphereCast(
-				charaCon3D.center + (Vector3.down * charaCon3D.height * 0.5f),
-				charaCon3D.radius,
-				Vector3.down,
-				out cast,
-				float.PositiveInfinity,
-				~0, //Layer mask,
+			// Physics.SphereCast(
+			// 	transform.position, //charaCon3D.center + (Vector3.down * charaCon3D.height * 0.5f),
+			// 	charaCon3D.radius,
+			// 	Vector3.down,
+			// 	out cast,
+			// 	Mathf.Abs(velocity.y),
+			// 	~0, //Layer mask,
+			// 	QueryTriggerInteraction.Ignore
+			// );
+
+			float castLength = (charaCon3D.height * 0.5f) + Mathf.Abs(velocity.y);// + charaCon3D.skinWidth;
+			bool didHit = Physics.Raycast(
+				transform.position + charaCon3D.center, //origin
+				Vector3.down, //direction
+				out cast, //output
+				castLength, //max distance
+				/*~0*/mask, //layer mask
 				QueryTriggerInteraction.Ignore
 			);
+			Debug.DrawRay(
+				transform.position + charaCon3D.center + Vector3.right,
+				Vector3.down * ((charaCon3D.height * 0.5f) + Mathf.Abs(velocity.y)),
+				Color.yellow
+			);
+
+			if (didHit) {
+				Debug.Log("Desired ray distance is " + castLength);
+				Debug.Log("Hit distance is " + cast.distance);
+			}
 
 			if (stickToGround) {
 				if (cast.collider == null) {
@@ -57,19 +78,16 @@ namespace Clouds.Collision3D
 				velocity.Value += new float3(0, -1, 0);
 			}
 
-			CollisionFlags hits = charaCon3D.Move(velocity.Value);
-			hits |= cast.collider != null ? CollisionFlags.Below : CollisionFlags.None;
+			charaCon3D.Move(velocity.Value);
 			if (hitOutput != null) {
-				hitOutput.Value = hits;
+				hitOutput.Value = charaCon3D.collisionFlags;
+				//hitOutput.Value |= (charaCon3D.isGrounded ? CollisionFlags.Below : CollisionFlags.None);
 			}
-
-			//Calculate the collision-recoil value.
-			float3 returner = (oldPos + velocity.Value) - (float3)(transform.position);
 
 			velocity.Value = 0;
 
-			//Return the collision recoil.
-			return returner;
+			//Return 0, because this return value is unneeded.
+			return 0;
 		}
 	}
 }

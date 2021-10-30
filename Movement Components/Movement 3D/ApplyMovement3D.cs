@@ -39,7 +39,7 @@ namespace Clouds.Movement3D {
 			ApplyMovementSystem3D.DeregisterObject(this);
 		}
 #else
-		void Update () {
+		void FixedUpdate () {
 			if (!hasCols) {
 				//Apply the velocity to the position.
 				myTransform.Translate(velocity.Value, preferredTransformSpace);
