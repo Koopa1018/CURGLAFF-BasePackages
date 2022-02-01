@@ -4,8 +4,7 @@
     "references": [
         "Unity.Mathematics",
         "Clouds.Inputs",
-        "Clouds.Combat.Base",
-        "ScriptOperatedAnimation"
+        "Clouds.Combat.Base"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

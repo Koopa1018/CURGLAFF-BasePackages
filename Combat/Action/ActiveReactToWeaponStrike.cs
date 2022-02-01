@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 using Clouds.Combat;
 
-namespace Clouds.ActionGame.Weapons {
+namespace Clouds.Combat.ActionGame.Weapons {
 	[RequireComponent(typeof(ReactToWeaponStrike))]
 	public sealed class ActiveReactToWeaponStrike : MonoBehaviour {
 		[SerializeField] LayerMask weaponMask;

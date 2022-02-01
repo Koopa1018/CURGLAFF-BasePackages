@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Unity.Mathematics;
 
 using Clouds.Combat;
 
-namespace Clouds.ActionGame.Weapons {
+namespace Clouds.Combat.ActionGame.Weapons {
 	[RequireComponent(typeof(WeaponStrike))]
 	public class ActiveWeaponStrike : MonoBehaviour {
 		const int HIT_DICTIONARY_CAPACITY = 8; //@TODO: does this need to be aligned as PoT?
@@ -17,6 +18,9 @@ namespace Clouds.ActionGame.Weapons {
 		//[SerializeField] CollideMode collideMode;
 		[SerializeField] LayerMask targetLayers;
 		[SerializeField] bool clearReactionCacheOnStart = true;
+
+		[SerializeField] UnityEvent onHitReactor = new UnityEvent();
+		[SerializeField] UnityEvent onHitSomethingElse = new UnityEvent();
 
 		[Header("Advanced")]
 		[Tooltip("How big to initialize the colliders-overlapped list that's written to each frame.")]
@@ -84,11 +88,24 @@ Check this to GetComponent on every ReactToWeaponStrike-less object every frame,
 			//Do overlap checks on all our colliders.
 			overlapAllColliders(hitFilter, ref hitsTmp, ref hits);
 
+			bool didHitReactor = false;
+			
 			//Interact objects which can react to weapon strikes.
 			foreach (Collider2D hit in hits) {
-				getReactor(hit)?.React(myStrike);
+				ReactToWeaponStrike reactor = getReactor(hit);
+				reactor?.React(myStrike);
+				
+				didHitReactor |= reactor != null;
 			}
 
+			if (didHitReactor) {
+				onHitReactor?.Invoke();
+			}
+			else if (hits.Count > 0) { //Didn't hit a reactor--but did hit SOMETHING!
+				onHitSomethingElse?.Invoke();
+			}
+
+			hits.Clear();
 		}
 
 		void overlapAllColliders (ContactFilter2D filter, ref List<Collider2D> hitsTmp, ref HashSet<Collider2D> hits) {
@@ -108,6 +125,7 @@ Check this to GetComponent on every ReactToWeaponStrike-less object every frame,
 		ReactToWeaponStrike getReactor (Collider2D tested) {
 			ReactToWeaponStrike returner;
 
+			
 			//If this object's been found with a reaction maker, return the previous result.
 			if (foundWith.TryGetValue(tested, out returner)) {
 				//VALIDATE: Is the previous result a real component?

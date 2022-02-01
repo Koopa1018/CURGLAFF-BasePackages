@@ -5,7 +5,7 @@
     "combat"
   ],
   "name": "com.clouds.combat.action",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "dependencies": {
     "com.unity.mathematics": "1.0.0",
     "com.clouds.input_base": "0.0.9",

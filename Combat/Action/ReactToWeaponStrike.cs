@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 using Clouds.Combat;
 
-namespace Clouds.ActionGame.Weapons {
+namespace Clouds.Combat.ActionGame.Weapons {
 	[AddComponentMenu("Combat/React To Weapon Strikes (requires vulnerability map)")]
 	public sealed class ReactToWeaponStrike : MonoBehaviour {
 		[SerializeField] UnityEvent<WeaponStrike, float> onHitEvent;
