@@ -9,7 +9,6 @@
   "dependencies": {
     "com.unity.mathematics": "1.0.0",
     "com.clouds.input_base": "0.0.9",
-    "com.clouds.script-operated-animation": "1.0.0",
     "com.clouds.combat": "0.0.1"
   },
   "repoPackagePath": "https://github.com/Koopa1018/CURGLAFF-BasePackages.git?path=/Combat/Action",
@@ -21,7 +20,7 @@
   "samples": [
     {
       "displayName": "Plain Sword",
-      "description": "Prebuilt sword-slash prefab with two animations and 8-bit sounds (not used by default).",
+      "description": "Prebuilt sword-slash prefab with two animations and 8-bit sounds (not used by default). Requires the package \"Script-Operated Animation\" to work correctly.",
       "path": "Samples/Plain Sword"
     }
   ]
