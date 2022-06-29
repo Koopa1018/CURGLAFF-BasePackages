@@ -7,7 +7,7 @@
   ],
   "name": "com.clouds.facing_8way",
   "readme": "",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "hideInEditor": false,
   "dependencies": {
     "com.unity.mathematics": "1.1.0",
