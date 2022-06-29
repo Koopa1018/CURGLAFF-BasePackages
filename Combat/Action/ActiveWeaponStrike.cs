@@ -48,6 +48,14 @@ Check this to GetComponent on every ReactToWeaponStrike-less object every frame,
 		/// components alongside "ReactThisWay<WeaponStruck>" components, and then remove all WeaponStrucks!~
 		/// </summary>
 		static Dictionary<Collider2D, ReactToWeaponStrike> foundWith;
+		internal static Dictionary<Collider2D, ReactToWeaponStrike> reactors {
+			get {
+				if (foundWith == null) {
+					foundWith = new Dictionary<Collider2D, ReactToWeaponStrike>(HIT_DICTIONARY_CAPACITY);
+				}
+				return foundWith;
+			}
+		}
 		/// <summary>
 		/// Colliders that've been collided with and found to be missing ReactToWeaponStrike components.
 		/// (The assumption is that this isn't going to change during a frame.)

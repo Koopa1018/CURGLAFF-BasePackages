@@ -16,14 +16,25 @@ namespace Clouds.Combat.ActionGame.Weapons {
 		public int Faction => _faction;
 		public bool IsOneShot => _oneShot;
 
+		internal System.Action onBegin;
+
+
 		static int NEXT_STRIKE = 0;
 		int weaponStrikeID = UNINITIALIZED;
 
+
 		public void BeginNew () {
+			onBegin?.Invoke();
+
+			int lastID = NEXT_STRIKE;
+
 			weaponStrikeID = NEXT_STRIKE++;
 
 			//If we're now suddenly _lower_ than the current strike ID, we've wrapped around and should clear all old-hits arrays.
 			//This ought to keep things working right, at the expense of potentially being hit by very, very old one-shot strikes twice.
+			if (NEXT_STRIKE < lastID) {
+				//Stub
+			}
 		}
 	}
 }
