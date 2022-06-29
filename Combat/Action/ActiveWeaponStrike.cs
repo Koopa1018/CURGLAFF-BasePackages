@@ -86,13 +86,22 @@ Check this to GetComponent on every ReactToWeaponStrike-less object every frame,
 			else if (foundWithout.Count > 0) {
 				foundWithout.Clear();
 			}
+
+			//To filter overlapped colliders by.
+			hitFilter = new ContactFilter2D();
+			hitFilter.SetLayerMask(targetLayers);
 		}
 
-		void FixedUpdate () {
-			//To filter overlapped colliders by.
-			ContactFilter2D hitFilter = new ContactFilter2D();
+		void OnValidate () {
+			//Refresh hit mask when it might have changed.
 			hitFilter.SetLayerMask(targetLayers);
-			
+		}
+
+
+		//Defined and created out here to avoid GC alloc per frame.
+		ContactFilter2D hitFilter;
+
+		void FixedUpdate () {			
 			//Do overlap checks on all our colliders.
 			overlapAllColliders(hitFilter, ref hitsTmp, ref hits);
 
