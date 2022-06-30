@@ -5,5 +5,7 @@ using UnityEngine;
 namespace Clouds.Combat {
 	public interface IAttack {
 		int Faction {get;}
+
+		float Strength {get;}
 	}
 }

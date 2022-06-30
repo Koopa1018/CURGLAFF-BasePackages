@@ -10,5 +10,7 @@ namespace Clouds.Combat.ActionGame.Weapons {
 	public class DamageDealer : MonoBehaviour, IAttack {
 		[SerializeField] int _faction;
 		public int Faction => _faction;
+		[SerializeField] float _strength;
+		public float Strength => _strength;
 	}
 }
