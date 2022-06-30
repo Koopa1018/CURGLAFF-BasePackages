@@ -7,6 +7,7 @@ using Clouds.PlayerInput;
 
 namespace Clouds.Combat.ActionGame.Weapons {
 	[AddComponentMenu("Combat/I'm A Melee Attack")]
+	[System.Obsolete("MeleeAttack's functionality has been folded into WeaponStrike.")]
 	public class MeleeAttack : MonoBehaviour {
 		[System.Serializable]
 		struct HurtboxState {

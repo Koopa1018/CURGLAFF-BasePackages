@@ -7,6 +7,7 @@ using Clouds.PlayerInput;
 
 namespace Clouds.Combat.ActionGame.Weapons {
 	[AddComponentMenu("Combat/I'm A Ranged Attack")]
+	[System.Obsolete("RangedAttack's functionality has been folded into WeaponStrike.")]
 	public class RangedAttack : MonoBehaviour {
 		[Header("Outputs")]
 		[SerializeField] WeaponStrike myStrike;
