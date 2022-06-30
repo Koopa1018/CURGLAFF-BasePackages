@@ -6,7 +6,10 @@ using UnityEngine.Events;
 using Clouds.Combat;
 
 namespace Clouds.Combat.ActionGame.Weapons {
-	public abstract class ReactToWeaponStrike : MonoBehaviour {
+	/// <summary>
+	/// Base class for a thing that reacts to taking damage.
+	/// </summary>
+	public abstract class DamageReactor : MonoBehaviour {
 		[SerializeField] protected Collider2D myCollider;
 
 		/// <summary>
@@ -25,14 +28,14 @@ namespace Clouds.Combat.ActionGame.Weapons {
 		/// </summary>
 		/// <param name="strike">The weapon strike we've been hit with. Guaranteed to be non-null.</param>
 		/// <param name="damageMultiplier">The damage multiplier calculated from the vulnerability map.</param>
-		protected abstract void DoReaction (WeaponStrike strike, float damageMultiplier);
+		protected abstract void DoReaction (DamageDealer strike, float damageMultiplier);
 
 
 		/// <summary>
 		/// Reacts to the given weapon strike.
 		/// </summary>
 		/// <param name="strike">The weapon strike being reacted to. If null, silently exits.</param>
-		public void React (WeaponStrike strike) {
+		public void React (DamageDealer strike) {
 			if (strike == null) {
 				return;
 			}
@@ -48,11 +51,11 @@ namespace Clouds.Combat.ActionGame.Weapons {
 
 		const int REACTOR_DICTIONARY_CAPACITY = 256; //@TODO: does this need to be aligned as PoT?
 
-		static Dictionary<Collider2D, ReactToWeaponStrike> _reactorsInScene;
-		public static Dictionary<Collider2D, ReactToWeaponStrike> ReactorsInScene {
+		static Dictionary<Collider2D, DamageReactor> _reactorsInScene;
+		public static Dictionary<Collider2D, DamageReactor> ReactorsInScene {
 			get {
 				if (_reactorsInScene == null) {
-					_reactorsInScene = new Dictionary<Collider2D, ReactToWeaponStrike>(REACTOR_DICTIONARY_CAPACITY);
+					_reactorsInScene = new Dictionary<Collider2D, DamageReactor>(REACTOR_DICTIONARY_CAPACITY);
 				}
 
 				return _reactorsInScene;

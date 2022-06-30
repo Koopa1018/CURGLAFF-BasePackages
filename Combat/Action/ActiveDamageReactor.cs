@@ -6,14 +6,14 @@ using UnityEngine.Events;
 using Clouds.Combat;
 
 namespace Clouds.Combat.ActionGame.Weapons {
-	[RequireComponent(typeof(ReactToWeaponStrike))]
-	public sealed class ActiveReactToWeaponStrike : MonoBehaviour {
+	[RequireComponent(typeof(DamageReactor))]
+	public sealed class ActiveDamageReactor : MonoBehaviour {
 		[SerializeField] LayerMask weaponMask;
 
-		ReactToWeaponStrike reactor;
+		DamageReactor reactor;
 
 		void Start () {
-			reactor = GetComponent<ReactToWeaponStrike>();
+			reactor = GetComponent<DamageReactor>();
 		}
 
 		void OnColliderEnter2D (Collider2D other) {
@@ -22,7 +22,7 @@ namespace Clouds.Combat.ActionGame.Weapons {
 				return;
 			}
 
-			reactor.React(other.GetComponent<WeaponStrike>());
+			reactor.React(other.GetComponent<DamageDealer>());
 		}				
 
 	}

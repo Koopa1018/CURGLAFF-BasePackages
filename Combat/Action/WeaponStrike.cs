@@ -195,8 +195,8 @@ namespace Clouds.Combat.ActionGame.Weapons {
 			
 			//Interact objects which can react to weapon strikes.
 			foreach (Collider2D hit in hits) {
-				ReactToWeaponStrike reactor;
-				ReactToWeaponStrike.ReactorsInScene.TryGetValue(hit, out reactor);
+				DamageReactor reactor;
+				DamageReactor.ReactorsInScene.TryGetValue(hit, out reactor);
 				reactor?.React(this);
 				if (reactor != null) {
 					Debug.Log("Hit reactor: " + reactor.ToString());
