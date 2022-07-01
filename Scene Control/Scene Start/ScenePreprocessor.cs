@@ -14,7 +14,7 @@ namespace Clouds.SceneManagement {
 	/// </summary>
 	public static class ScenePreprocessor {
 		const string SPAWN_POINT_TAG = "SpawnPoints";
-		const string DEFAULT_START_POINT_NAME = "Start Point";
+		const string DEFAULT_START_POINT_NAME = "Spawn Point";
 		
 #if UNITY_EDITOR
 		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]

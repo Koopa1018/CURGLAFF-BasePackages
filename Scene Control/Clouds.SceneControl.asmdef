@@ -1,6 +1,6 @@
 {
     "name": "Clouds.SceneControl",
-    "rootNamespace": "",
+    "rootNamespace": "Clouds.SceneManagement",
     "references": [
         "Unity.Mathematics",
         "Clouds.Transitions",
