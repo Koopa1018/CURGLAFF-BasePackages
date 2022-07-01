@@ -63,6 +63,11 @@ Output will not be affected by collisions.",
 													.GetComponentsInChildren<IClearVelocity2D>();
 			MonoBehaviour veloHandler = null;
 			Velocity myVelocity = (Velocity)myVelocityField.objectReferenceValue;
+
+			//Early exit if velocity is unset.
+			if (myVelocity == null) {
+				return;
+			}
 			
 			foreach (IClearVelocity2D c in handlerCandidates) {
 				if (c.EDI_velocityReference == (Velocity)myVelocityField.objectReferenceValue) {
