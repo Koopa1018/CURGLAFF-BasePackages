@@ -52,7 +52,7 @@ namespace Clouds.Movement2D {
 				EditorGUILayout.HelpBox(
 	@"ApplyMovement doesn't have a collision-handler component on its GameObject.
 Output will not be affected by collisions.",
-					MessageType.Warning
+					MessageType.Info
 				);
 			}
 		}
