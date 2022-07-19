@@ -11,6 +11,6 @@ namespace Clouds.Combat.ActionGame.Weapons {
 		[SerializeField] int _faction;
 		public int Faction => _faction;
 		[SerializeField] float _strength;
-		public float Strength => _strength;
+		public float Strength {get => _strength; set => _strength = value;}
 	}
 }
