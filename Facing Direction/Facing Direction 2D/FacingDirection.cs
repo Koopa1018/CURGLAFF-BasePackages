@@ -16,15 +16,23 @@ namespace Clouds.Facing2D
 #endif
 	 {
 		[Tooltip("The direction we should start out facing.")]
-		/*[HideInInspector]*/ public float2 Value = 0;
+		[UnityEngine.Serialization.FormerlySerializedAs("Value")]
+		[SerializeField] float2 _value = 0;
+		public float2 Value {
+			get => _value;
+			set {
+				//Debug.Log("Setting facing to " + value, this);
+				_value = value;
+			}
+		}
 
 		public float x {
-			get => Value.x;
-			set => Value.x = value;
+			get => _value.x;
+			set => _value.x = value;
 		}
 		public float y {
-			get => Value.y;
-			set => Value.y = value;
+			get => _value.y;
+			set => _value.y = value;
 		}
 
 		/// <summary>
@@ -44,16 +52,19 @@ namespace Clouds.Facing2D
 		}
 
 		public float signedAngle () {
-			return Vector2.SignedAngle(Vector2.up, math.normalize(Value));
+			return Vector2.SignedAngle(Vector2.down, normalized());
 		}
+
+
+
 		[BurstCompile]
 		public float2 normalized () {
-			return math.normalize(Value);
+			return math.normalize(_value);
 		}
 
 #if UNITY_ENTITIES
 		public void Convert (Entity e, EntityManager em, GameObjectConversionSystem gocs) {
-			em.AddComponentData(e, new FacingDirectionComponent(Value));
+			em.AddComponentData(e, new FacingDirectionComponent(_value));
 		}
 #endif
 
