@@ -1,0 +1,19 @@
+{
+    "name": "Clouds.FacingDirection.2D.Editor",
+    "rootNamespace": "",
+    "references": [
+        "Unity.Mathematics",
+        "Clouds.FacingDirection.2D"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
