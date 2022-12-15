@@ -109,7 +109,11 @@ namespace Clouds.Combat.ActionGame.Weapons {
 			hitFilter.SetLayerMask(targetLayers);
 
 			hitsTmp = new List<Collider2D>(hitListInitCapacity);
+#if UNITY_2021_2_OR_NEWER
 			hits = new HashSet<Collider2D>(hitListInitCapacity);
+#else
+			hits = new HashSet<Collider2D>();
+#endif
 		}
 
 		void OnValidate () {
