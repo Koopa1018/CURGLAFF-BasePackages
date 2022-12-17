@@ -59,7 +59,7 @@ namespace Clouds.Facing2D
 
 		[BurstCompile]
 		public float2 normalized () {
-			return math.normalize(_value);
+			return math.any(_value != 0)? math.normalize(_value) : 0;
 		}
 
 #if UNITY_ENTITIES
